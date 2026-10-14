@@ -1,3 +1,21 @@
 dist/
 node_modules/
 .DS_Store
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.impeccable/config.local.json
+
+# Generated design-tool files
+.impeccable/hook.cache.json
+.impeccable/questions/
+.impeccable/review/
+
+# Downloaded Impeccable binaries
+**/skills/impeccable/scripts/bin/
+
+# Original font download; website uses public/fonts/
+DepartureMono-1.500 2/
