@@ -1,0 +1,36 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "tiny-text",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-14T08:42:53.024Z",
+        "reason": "Agent reviewed: sub-12px markings are miniature physical Pokédex controls and supplementary ball-type labels; reading paragraphs are 14px and project actions are 12px. User pinned miniature object scene and Departure Mono."
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-14T08:49:31.198Z",
+        "reason": "User supplied and explicitly requested the scrolling-name portfolio reference; this decorative aria-hidden name marquee has pause control and respects reduced motion."
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-10-14T08:49:31.287Z",
+        "reason": "Agent reviewed all flagged declarations: the 3px border is the Pokédex physical casing seam; 4px transparent top/bottom borders construct the play triangle. These are geometric object details, not accent borders on content cards."
+      }
+    ]
+  }
+}
