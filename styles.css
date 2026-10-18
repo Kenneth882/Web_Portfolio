@@ -19,3 +19,5 @@
 .pixel-avatar{width:32px;height:32px;margin:4px 0}
 @media(max-width:650px){.drag-hint{max-width:110px}.footer{gap:8px}.footer button{padding:10px 0}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.project-link{display:inline-block;text-decoration:none;font-size:12px}.project-link-hint{display:block;margin-top:6px;font-size:11px}

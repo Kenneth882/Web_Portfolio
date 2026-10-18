@@ -1,5 +1,13 @@
 const projects = [
-  { title: 'Project 01', ball: 'Poké Ball', focus: 'A place for your first project.', description: 'Every adventure starts somewhere. This entry is ready for a project you want to share: what you built, why it matters, and what you learned along the way.' },
+  {
+    title: 'DinoPump',
+    ball: 'Poké Ball',
+    focus: 'A prehistoric market. A ten-minute trading showdown.',
+    description: 'Trade fictional assets with virtual Dino Dollars on the Pangaea Exchange. Up to eight players react to prehistoric news and compete for the highest portfolio value. A deterministic, server-controlled market powers live trading, charts, portfolios, and rankings, with optional AI narration of recorded events.',
+    status: 'In development',
+    technologies: 'TypeScript, Next.js, React, Node.js, Socket.IO, PostgreSQL',
+    repository: 'https://github.com/Kenneth882/DinoPump',
+  },
   { title: 'Project 02', ball: 'Great Ball', focus: 'A place for your next experiment.', description: 'A home for an idea you took a little further. Add the problem you explored, the decisions you made, and the details that make the finished work yours.' },
   { title: 'Project 03', ball: 'Ultra Ball', focus: 'A place for a bigger challenge.', description: 'Use this entry to unpack a project with a few more moving parts. Show the process, explain the tradeoffs, and give visitors a closer look at the result.' },
   { title: 'Project 04', ball: 'Master Ball', focus: 'A place for something special.', description: 'Save this spot for a project you are especially excited about. A useful tool, an unexpected experiment, or something that only you would think to make.' },
@@ -24,7 +32,10 @@ function openProject(index, trigger) {
   const number = String(currentProject + 1).padStart(2, '0');
   const orb = projectButtons[currentProject].querySelector('.orb').outerHTML;
   counter.textContent = `POKÉDEX / ENTRY ${number}`;
-  content.innerHTML = `<article class="entry-body"><h2 id="entry-title">${project.title}</h2><p class="entry-description">${project.focus}</p><div class="entry-art">${orb}<div class="entry-art-copy">${project.ball}<span>PROJECT SLOT ${number} / 04</span></div></div><p class="entry-description">${project.description}</p><dl class="entry-meta"><div><dt>STATUS</dt><dd>Awaiting its adventure</dd></div><div><dt>TECHNOLOGIES</dt><dd>To be added</dd></div></dl><p class="placeholder-note">Placeholder entry. Real project details, images, and links are coming later.</p></article>`;
+  const projectAction = project.repository
+    ? `<a class="view-projects project-link" href="${project.repository}" target="_blank" rel="noopener noreferrer">View on GitHub<span class="project-link-hint">Opens in a new tab</span></a>`
+    : '<p class="placeholder-note">Placeholder entry. Real project details, images, and links are coming later.</p>';
+  content.innerHTML = `<article class="entry-body"><h2 id="entry-title">${project.title}</h2><p class="entry-description">${project.focus}</p><div class="entry-art">${orb}<div class="entry-art-copy">${project.ball}<span>PROJECT SLOT ${number} / 04</span></div></div><p class="entry-description">${project.description}</p><dl class="entry-meta"><div><dt>STATUS</dt><dd>${project.status || 'Awaiting its adventure'}</dd></div><div><dt>TECHNOLOGIES</dt><dd>${project.technologies || 'To be added'}</dd></div></dl>${projectAction}</article>`;
   document.querySelector('#dialog-navigation').hidden = false;
   document.querySelector('#project-position').textContent = `${number} / 04`;
   showDialog(trigger);
